@@ -1,0 +1,13 @@
+[
+   {
+      "email": "testuser_2026@qa.com",
+      "password": "VerySecurePassword123@",
+      "firstName": "Tom",
+      "lastName": "Sui",
+      "country": "LT",
+      "city": "Vilnius",
+      "address": "Verkiu g. 1",
+      "zipCode": "11111",
+      "phone": "37011111111"
+   }
+]
