@@ -7,10 +7,12 @@ export const ECOM_SELECTORS = {
 
    NAV: {
       REGISTER: 'a[href="/register"]',
-      LOGIN: 'a[href="/login]',
-      COMPUTERS: 'a[href="computers"]',
+      LOGIN: 'a[href="/login"]',
+      COMPUTERS: 'a[href="/computers"]',
       NOTEBOOKS: 'a[href="/notebooks"]',
       ELECTRONICS: 'a[href="/electronics"]',
+      DESKTOPS: 'a[href="/desktops"]',
+      JEWELRY: 'a[href="/jewelry"]',
       CELL_PHONES: 'a[href="/cell-phones"]',
       CART: 'a[href="/cart"]',
    },
@@ -155,6 +157,8 @@ export const URL_PATTERNS = {
    NOTEBOOKS: /.*notebooks/,
    ELECTRONICS: /.*electronics/,
    CELL_PHONES: /.*cell-phones/,
+   DESKTOPS: /.*desktops/,
+   JEWELRY: /.*jewelry/,
    CART: /.*cart/,
    CHECKOUT: /.*checkout/,
    ORDER_COMPLETED: /.*completed/,
