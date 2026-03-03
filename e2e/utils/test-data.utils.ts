@@ -10,7 +10,7 @@ export const generateTestUserData = (): UserRegistrationData => {
       password: 'VerySecurePassword123@',
       firstName: 'Tom',
       lastName: 'Sui',
-      country: 'LT',
+      country: 'Lithuania',
       city: 'Vilnius',
       address: 'Verkiu g. 1',
       zipCode: '11111',
