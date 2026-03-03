@@ -4,3 +4,4 @@ export * from './registration.utils';
 export * from './checkout.utils';
 export * from './navigation.utils';
 export * from './test-data.utils';
+export * from './web-tables.utils';
