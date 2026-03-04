@@ -7,6 +7,7 @@ import {
    updateCartItemQuantity,
    removeCartItem,
    getCartItemQuantity,
+   verifyCartArithmetic,
    registerUser,
    fillBillingAddress,
    completeCheckoutSteps,
@@ -81,6 +82,9 @@ test('TC-E2E-ECOM-001: End-to-End Purchase Flow for High-Value Products', async 
 
    const updatedQuantity = await getCartItemQuantity(page, desktop!.name);
    expect(updatedQuantity).toBe(2);
+
+   // Verify cart arithmetic: unit price × quantity = subtotal, and subtotals sum to total
+   await verifyCartArithmetic(page);
 
    // 20. Remove jewelry item and verify only desktop remains
    await removeCartItem(page, jewelry!.name);

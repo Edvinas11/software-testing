@@ -1,4 +1,4 @@
-import type { Page } from '@playwright/test';
+import { type Page, expect } from '@playwright/test';
 import type { ProductInfo } from '../types/test-data.types';
 import { parsePrice } from './price.utils';
 import { ECOM_SELECTORS } from '../constants/selectors';
@@ -51,4 +51,26 @@ export const getCartItemQuantity = async (page: Page, productName: string) => {
    const quantity = await productRow.locator(ECOM_SELECTORS.CART.QUANTITY_INPUT).inputValue();
 
    return parseInt(quantity, 10);
+};
+
+export const verifyCartArithmetic = async (page: Page) => {
+   const rows = await page.locator(ECOM_SELECTORS.CART.ITEM_ROW).all();
+   let expectedTotal = 0;
+
+   for (const row of rows) {
+      const unitPrice = parsePrice(await row.locator(ECOM_SELECTORS.CART.UNIT_PRICE).textContent());
+      const quantity = parseInt(
+         await row.locator(ECOM_SELECTORS.CART.QUANTITY_INPUT).inputValue(),
+         10,
+      );
+      const subtotal = parsePrice(await row.locator(ECOM_SELECTORS.CART.SUBTOTAL).textContent());
+
+      expect(subtotal).toBeCloseTo(unitPrice * quantity, 2);
+      expectedTotal += subtotal;
+   }
+
+   const orderTotal = parsePrice(
+      await page.locator(ECOM_SELECTORS.CART.TOTAL_PRICE).textContent(),
+   );
+   expect(orderTotal).toBeGreaterThanOrEqual(expectedTotal);
 };

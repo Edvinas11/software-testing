@@ -49,6 +49,8 @@ export const ECOM_SELECTORS = {
       QUANTITY_INPUT: '.qty-input',
       UPDATE_BUTTON: 'input[name="updatecart"]',
       REMOVE_CHECKBOX: 'input[name="removefromcart"]',
+      UNIT_PRICE: '.product-unit-price',
+      SUBTOTAL: '.product-subtotal',
       TOTAL_PRICE: '.cart-total-right .order-total',
       TERMS_CHECKBOX: '#termsofservice',
       CHECKOUT_BUTTON: '#checkout',
