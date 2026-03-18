@@ -15,6 +15,7 @@ export const ECOM_SELECTORS = {
       JEWELRY: 'a[href="/jewelry"]',
       CELL_PHONES: 'a[href="/cell-phones"]',
       CART: 'a[href="/cart"]',
+      LOGOUT: 'a[href="/logout"]',
    },
 
    LOGIN: {

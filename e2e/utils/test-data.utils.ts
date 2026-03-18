@@ -19,7 +19,7 @@ export const generateTestUserData = (): UserRegistrationData => {
 };
 
 export const loadTestUsersFromFile = (
-   filePath: string = path.resolve(__dirname, '../test-data/ecom-users.json')
+   filePath: string = path.resolve(__dirname, '../test-data/users.json')
 ): UserRegistrationData[] => {
    const raw = fs.readFileSync(filePath, 'utf-8');
    return JSON.parse(raw) as UserRegistrationData[];
