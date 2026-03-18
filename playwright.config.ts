@@ -12,6 +12,8 @@ export default defineConfig({
     screenshot: 'on',
   },
 
+  snapshotPathTemplate: '{testDir}/__screenshots__/{testFilePath}/{arg}{ext}',
+
   projects: [
     {
       name: 'chromium',
